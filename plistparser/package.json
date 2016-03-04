@@ -1,0 +1,20 @@
+{
+  "name": "plistparser",
+  "version": "1.0.0",
+  "description": "a helper to parse plist",
+  "main": "./bin/plistparser",
+  "bin": {
+    "plistparser": "./bin/plistparser"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "plist"
+  ],
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "author": "suraj",
+  "license": "ISC"
+}
