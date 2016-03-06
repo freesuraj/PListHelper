@@ -92,7 +92,7 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
-screenshots/
+#screenshots/
 
 # fastlane scan
 test_output/

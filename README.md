@@ -27,7 +27,7 @@ Creates a converted plist and a swift file with keypath constants in the current
 ### Screenshots
 ![output_plist](https://github.com/freesuraj/PListHelper/blob/master/screenshots/output_plist.png?raw=true)
 
-![output_swift](https://github.com/freesuraj/PListHelper/blob/master/screenshots/output_swift.png?raw=true)
+![output_swift](https://github.com/freesuraj/PListHelper/blob/masterato/screenshots/output_swift.png?raw=true)
 
 
 [npm-url]: https://npmjs.org/package/plistparser
