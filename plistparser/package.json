@@ -1,6 +1,6 @@
 {
   "name": "plistparser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a helper to parse plist",
   "main": "./bin/plistparser",
   "bin": {
