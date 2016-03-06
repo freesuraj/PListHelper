@@ -16,15 +16,15 @@
 		<key>AppIcon</key>
 		<dict>
 			<key>sg</key>
-			<string></string>
+			<string>appicon_sg</string>
 			<key>default</key>
-			<string></string>
+			<string>appicon_default</string>
 			<key>my</key>
-			<string></string>
+			<string>appicon_my</string>
 			<key>id</key>
-			<string></string>
+			<string>appicon_id</string>
 			<key>th</key>
-			<string></string>
+			<string>appicon_th</string>
 		</dict>
 	</dict>
 	<key>NewLaunches</key>

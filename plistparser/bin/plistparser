@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var pkg     = require('../package');
+var program = require('commander');
+var parser = require('../lib/parser')
+
+program
+  .version("plist parser version: " + pkg.version)
+  .description('A command line tool to parse plist')
+  .option('-n, --name [path]', 'Path of the input plist file','')
+  .option('-c, --country [country]', 'name of country, if not specified uses default','default');;
+
+program.on('--help', function () {
+  console.log('Example');
+  console.log('     $ plistparser -n path/to/plist/file.plist -c sg');
+  console.log('');
+  console.log('Creates a converted plist in the current directory');
+  console.log('');
+});
+program.parse(process.argv);
+
+if (program.name) {
+  parser.parsePlist(program.name, program.country);
+} else {
+  program.outputHelp();
+  process.exit(1);
+}

@@ -9,11 +9,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/freesuraj/plithelper"
+  },
+  "bugs": {
+    "url": "https://github.com/freesuraj/plisthelper/issues"
+  },
   "keywords": [
-    "plist"
+    "plist",
+    "parser"
   ],
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "type-of": "^2.0.1"
   },
   "author": "suraj",
   "license": "ISC"
