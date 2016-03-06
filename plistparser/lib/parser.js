@@ -102,6 +102,42 @@ function createNewConstantFile(newKeynameFile) {
       return self.rawValue.stringByReplacingOccurrencesOfString("_", withString: ".")
    }
   */})
+ var configManager = multiline(function() {/*
+class ConfigManager: NSObject {
+   let plistConfigName: String
+
+   required init(configFileName: String) {
+       plistConfigName = configFileName
+   }
+
+   func valueForConfigKey(configKey: ConfigKeys) -> AnyObject? {
+       return valueForKeyPath(configKey.keyPath())
+   }
+
+   override func valueForKeyPath(keyPath: String) -> AnyObject? {
+       guard let path = NSBundle.mainBundle().pathForResource(plistConfigName, ofType: "plist"),
+       let dictionary = NSDictionary(contentsOfFile: path) else {
+           return nil
+       }
+       return valueForKeyPath(keyPath, inDictionary: dictionary)
+   }
+
+   private func valueForKeyPath(keypath: String, inDictionary dictionary: NSDictionary) -> AnyObject? {
+       let keys = keypath.componentsSeparatedByString(".")
+       var currentDictionary = dictionary
+       for (index, aKey) in keys.enumerate() {
+           if index == keys.count - 1 {
+               return currentDictionary.valueForKey(aKey)
+           }
+           guard let dict = currentDictionary.valueForKey(aKey) as? NSDictionary else {
+               return nil
+           }
+           currentDictionary = dict
+       }
+       return nil
+   }
+}
+   */})
   wstream.write(header);
 
   wstream.write('\n// Created at ' + dateFormat()+'\n\n')
@@ -112,7 +148,8 @@ function createNewConstantFile(newKeynameFile) {
     wstream.write('   case '+ keyName + '\n')
   }
   wstream.write('\n'+functionValue)
-  wstream.write('\n} \n');
+  wstream.write('\n} \n\n');
+  wstream.write(configManager)
   wstream.end();
 }
 

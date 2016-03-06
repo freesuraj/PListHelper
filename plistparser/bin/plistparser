@@ -14,7 +14,7 @@ program.on('--help', function () {
   console.log('Example');
   console.log('     $ plistparser -n path/to/plist/file.plist -c sg');
   console.log('');
-  console.log('Creates a converted plist in the current directory');
+  console.log('Creates a converted plist and a swift file with keypath constants in the current directory');
   console.log('');
 });
 program.parse(process.argv);
