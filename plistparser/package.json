@@ -1,6 +1,6 @@
 {
   "name": "plistparser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a helper to parse plist",
   "main": "./bin/plistparser",
   "bin": {
@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "commander": "^2.9.0",
+    "plist": "^1.2.0",
     "type-of": "^2.0.1"
   },
   "author": "suraj",
