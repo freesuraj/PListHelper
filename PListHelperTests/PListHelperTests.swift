@@ -11,7 +11,7 @@ import XCTest
 
 class PListHelperTests: XCTestCase {
     
-    let configManager = ConfigManager.globalManager
+    let configManager = ConfigManager(configFileName: "AppConfig")
     
     override func setUp() {
         super.setUp()

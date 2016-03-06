@@ -9,14 +9,18 @@
 import Foundation
 
 class ConfigManager: NSObject {
-    static let globalManager = ConfigManager()
+    let plistConfigName: String
+    
+    required init(configFileName: String) {
+        plistConfigName = configFileName
+    }
     
     func valueForConfigKey(configKey: ConfigKeys) -> AnyObject? {
         return valueForKeyPath(configKey.keyPath())
     }
     
     override func valueForKeyPath(keyPath: String) -> AnyObject? {
-        guard let path = NSBundle.mainBundle().pathForResource("AppConfig", ofType: "plist"),
+        guard let path = NSBundle.mainBundle().pathForResource(plistConfigName, ofType: "plist"),
         let dictionary = NSDictionary(contentsOfFile: path) else {
             return nil
         }
