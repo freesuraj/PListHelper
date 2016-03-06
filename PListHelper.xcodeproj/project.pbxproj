@@ -13,7 +13,7 @@
 		ED545EE41C86D3970085773D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED545EE31C86D3970085773D /* Assets.xcassets */; };
 		ED545EE71C86D3970085773D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED545EE51C86D3970085773D /* LaunchScreen.storyboard */; };
 		ED545EF21C86D3970085773D /* PListHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED545EF11C86D3970085773D /* PListHelperTests.swift */; };
-		ED545EFD1C86D4010085773D /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED545EFC1C86D4010085773D /* ConfigFile.swift */; };
+		ED545EFD1C86D4010085773D /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED545EFC1C86D4010085773D /* ConfigManager.swift */; };
 		EDA46F031C89287600556996 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDA46F021C89287600556996 /* AppConfig.plist */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		ED545EED1C86D3970085773D /* PListHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PListHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED545EF11C86D3970085773D /* PListHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListHelperTests.swift; sourceTree = "<group>"; };
 		ED545EF31C86D3970085773D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED545EFC1C86D4010085773D /* ConfigFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFile.swift; sourceTree = "<group>"; };
+		ED545EFC1C86D4010085773D /* ConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		EDA46F021C89287600556996 /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 				ED545EDC1C86D3970085773D /* AppDelegate.swift */,
 				ED545EDE1C86D3970085773D /* ViewController.swift */,
 				EDA46F021C89287600556996 /* AppConfig.plist */,
-				ED545EFC1C86D4010085773D /* ConfigFile.swift */,
+				ED545EFC1C86D4010085773D /* ConfigManager.swift */,
 				ED545EE01C86D3970085773D /* Main.storyboard */,
 				ED545EE31C86D3970085773D /* Assets.xcassets */,
 				ED545EE51C86D3970085773D /* LaunchScreen.storyboard */,
@@ -204,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED545EFD1C86D4010085773D /* ConfigFile.swift in Sources */,
+				ED545EFD1C86D4010085773D /* ConfigManager.swift in Sources */,
 				ED545EDF1C86D3970085773D /* ViewController.swift in Sources */,
 				ED545EDD1C86D3970085773D /* AppDelegate.swift in Sources */,
 			);

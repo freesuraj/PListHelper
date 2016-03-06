@@ -11,26 +11,36 @@ import XCTest
 
 class PListHelperTests: XCTestCase {
     
+    let configManager = ConfigManager.globalManager
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLevel1String() {
+        let actual = configManager.valueForKeyPath("Author") as! String
+        XCTAssertEqual("PropetyGuru Pte Ltd", actual)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testLevel3String() {
+        let actual = configManager.valueForKeyPath("AppInfo.AppName.id") as! String
+        XCTAssertEqual("Rumah", actual)
+    }
+    func testLevel4String() {
+        let actual = configManager.valueForKeyPath("NewLaunches.ApiPath.list.default") as! String
+        XCTAssertEqual("/v2/developerprojects/list", actual)
+    }
+    func testLevel3Dictionary() {
+        let actual = configManager.valueForKeyPath("NewLaunches.Enabled") as! [String: Bool]
+        let expected = ["default" : true, "sg": false, "my": true]
+        XCTAssertEqual(expected, actual)
+    }
+    func testLevel4Array() {
+        let actual = configManager.valueForKeyPath("NewLaunches.Filter.PriceArray.sg") as! [Int]
+        let expected = [50000, 100000, 200000, 500000]
+        XCTAssertEqual(expected, actual)
     }
     
 }
