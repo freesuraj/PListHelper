@@ -42,5 +42,10 @@ class PListHelperTests: XCTestCase {
         let expected = [50000, 100000, 200000, 500000]
         XCTAssertEqual(expected, actual)
     }
+    // MARK: Enum Constants
+    func testKeyPath() {
+        XCTAssertEqual(ConfigKeys.Author.keyPath(), "Author")
+        XCTAssertEqual(ConfigKeys.AppInfo_AppIcon.keyPath(), "AppInfo.AppIcon")
+    }
     
 }

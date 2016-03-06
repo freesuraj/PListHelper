@@ -11,6 +11,10 @@ import Foundation
 class ConfigManager: NSObject {
     static let globalManager = ConfigManager()
     
+    func valueForConfigKey(configKey: ConfigKeys) -> AnyObject? {
+        return valueForKeyPath(configKey.keyPath())
+    }
+    
     override func valueForKeyPath(keyPath: String) -> AnyObject? {
         guard let path = NSBundle.mainBundle().pathForResource("AppConfig", ofType: "plist"),
         let dictionary = NSDictionary(contentsOfFile: path) else {

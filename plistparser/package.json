@@ -22,6 +22,8 @@
   ],
   "dependencies": {
     "commander": "^2.9.0",
+    "dateformat": "^1.0.12",
+    "multiline": "^1.0.2",
     "plist": "^1.2.0",
     "type-of": "^2.0.1"
   },

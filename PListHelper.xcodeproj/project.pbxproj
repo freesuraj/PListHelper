@@ -15,6 +15,7 @@
 		ED545EF21C86D3970085773D /* PListHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED545EF11C86D3970085773D /* PListHelperTests.swift */; };
 		ED545EFD1C86D4010085773D /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED545EFC1C86D4010085773D /* ConfigManager.swift */; };
 		EDA46F031C89287600556996 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDA46F021C89287600556996 /* AppConfig.plist */; };
+		EDF4347F1C8C603400C7D576 /* ConfigKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4347E1C8C603400C7D576 /* ConfigKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		ED545EF31C86D3970085773D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED545EFC1C86D4010085773D /* ConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		EDA46F021C89287600556996 /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
+		EDF4347E1C8C603400C7D576 /* ConfigKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				ED545EDE1C86D3970085773D /* ViewController.swift */,
 				EDA46F021C89287600556996 /* AppConfig.plist */,
 				ED545EFC1C86D4010085773D /* ConfigManager.swift */,
+				EDF4347E1C8C603400C7D576 /* ConfigKeys.swift */,
 				ED545EE01C86D3970085773D /* Main.storyboard */,
 				ED545EE31C86D3970085773D /* Assets.xcassets */,
 				ED545EE51C86D3970085773D /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 				ED545EFD1C86D4010085773D /* ConfigManager.swift in Sources */,
 				ED545EDF1C86D3970085773D /* ViewController.swift in Sources */,
 				ED545EDD1C86D3970085773D /* AppDelegate.swift in Sources */,
+				EDF4347F1C8C603400C7D576 /* ConfigKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

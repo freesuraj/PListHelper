@@ -1,7 +1,10 @@
 var plist = require('plist');
+var type = require('type-of')
+var dateFormat = require('dateformat')
+var multiline = require('multiline')
 var fs = require('fs')
 var path = require('path')
-var type = require('type-of')
+
 // var result = plist.parse(fs.readFileSync('AppConfig.plist', 'utf8'));
 var country = "sg"
 var keysAndValues = {}
@@ -66,9 +69,19 @@ exports.parsePlist = function(file, _country) {
   result = plist.parse(fs.readFileSync(file, 'utf8'));
   country = _country
   iterateJson([], result, country)
-  createNewPlist()
-  var plistText = plist.build(result)
+  // Generate country specific .plist file
   var newPlistPath = path.join(userdir, path.basename(file,'.plist') + '_' + _country + '.plist')
+  createNewPlist(newPlistPath)
+  // Generate ConfigKeys.swift file
+  var newKeynameFile = path.join(userdir, 'ConfigKeys.swift')
+  createNewConstantFile(newKeynameFile)
+}
+
+function createNewPlist(newPlistPath) {
+  for (var key in keysAndValues) {
+    setDataByEvaluation(key,keysAndValues[key])
+  }
+  var plistText = plist.build(result)
   fs.writeFile(newPlistPath, plistText, function(err) {
     if(err) {
         return console.log(err);
@@ -77,14 +90,30 @@ exports.parsePlist = function(file, _country) {
 });
 }
 
-// iterateJson([], result, country)
-// createNewPlist()
-// printNewPlist(true)
+function createNewConstantFile(newKeynameFile) {
+  var wstream = fs.createWriteStream(newKeynameFile);
+  var header = multiline(function() {/*
+// ConfigKeys.swift
+//
+// Created by plistparser ( https://github.com/freesuraj/plisthelper )
+*/})
+  var functionValue = multiline(function() {/*
+   func keyPath() -> String {
+      return self.rawValue.stringByReplacingOccurrencesOfString("_", withString: ".")
+   }
+  */})
+  wstream.write(header);
 
-function createNewPlist() {
+  wstream.write('\n// Created at ' + dateFormat()+'\n\n')
+  wstream.write('import Foundation\n\n');
+  wstream.write('enum ConfigKeys: String { \n\n');
   for (var key in keysAndValues) {
-    setDataByEvaluation(key,keysAndValues[key])
+    var keyName = key.split('.').join('_')
+    wstream.write('   case '+ keyName + '\n')
   }
+  wstream.write('\n'+functionValue)
+  wstream.write('\n} \n');
+  wstream.end();
 }
 
 function setDataByEvaluation(path, value) {
